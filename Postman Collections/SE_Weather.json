@@ -1,0 +1,271 @@
+{
+	"info": {
+		"_postman_id": "296c19f5-632d-497c-9d03-e412538acd75",
+		"name": "Weather collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "San Francisco Temp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "eb5a40e2-cb59-4582-a9a3-7a95312ad8d9",
+						"exec": [
+							"//Parse API response",
+							"let response = pm.response.json();",
+							"let main = response.weather[0].main;",
+							"var temperature = pm.response.json().main.temp;",
+							"",
+							"//Test API speed",
+							"pm.test(\"Response time is less than 300ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"//Test temperature range",
+							"pm.test(\"Is temp sensible range?\", function () {",
+							"    console.log(\"Temperature (F) is: \", temperature)",
+							"    pm.expect(temperature).to.be.below(140); // 60° C",
+							"    pm.expect(temperature).to.be.above(-4); // -20° C",
+							"});",
+							"",
+							"if (temperature>60){",
+							"    console.log(\"Temp is hot, fetching Bangalore\")",
+							"    postman.setNextRequest(\"Bangalore Temp\"); ",
+							"}",
+							"else{",
+							"    console.log(\"Temp is fine, fetching London\")",
+							"    postman.setNextRequest(\"London Temp\");",
+							"}",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "3677b0a0-0304-4609-9d08-78d05dbd0993",
+						"exec": [
+							"console.log(\"Now fetching SF weather\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "d933fa31-8ab4-4829-bfed-1026d29d8877",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat={{sf_lat}}&lon={{sf_lon}}&appid={{weather_api_key}}&units=imperial",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{sf_lat}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{sf_lon}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{weather_api_key}}"
+						},
+						{
+							"key": "units",
+							"value": "imperial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "London Temp",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "c8ed6bd0-5a1a-4d10-8d77-37113c7f4b72",
+						"exec": [
+							"console.log(\"Now fetching London weather\")"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8c08c958-0e86-4dbf-bee6-877b58bd4d14",
+						"exec": [
+							"//Parse API response",
+							"let response = pm.response.json();",
+							"let main = response.weather[0].main;",
+							"var temperature = pm.response.json().main.temp;",
+							"",
+							"//Test API speed",
+							"pm.test(\"Response time is less than 300ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"//Test temperature range",
+							"pm.test(\"Is temp sensible range?\", function () {",
+							"    //var temperature = pm.response.json().main.temp;",
+							"    console.log(\"Temperature is: \", temperature)",
+							"    pm.expect(temperature).to.be.below(140); // 60° C",
+							"    pm.expect(temperature).to.be.above(-4); // -20° C",
+							"});",
+							"",
+							"//Stopping the Runner",
+							"postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "26555a2c-cd6e-4a8d-a8c2-f3c7706b3e10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat={{london_lat}}&lon={{london_lon}}&appid={{weather_api_key}}&units=imperial",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{london_lat}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{london_lon}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{weather_api_key}}"
+						},
+						{
+							"key": "units",
+							"value": "imperial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bangalore Temp",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "474bed21-e0a9-4876-b80c-f7142983717f",
+						"exec": [
+							"//Parse API response",
+							"let response = pm.response.json();",
+							"let main = response.weather[0].main;",
+							"var temperature = pm.response.json().main.temp;",
+							"",
+							"//Test API speed",
+							"pm.test(\"Response time is less than 300ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});",
+							"",
+							"//Test temperature range",
+							"pm.test(\"Is temp sensible range?\", function () {",
+							"    //var temperature = pm.response.json().main.temp;",
+							"    console.log(\"Temperature is: \", temperature)",
+							"    pm.expect(temperature).to.be.below(140); // 60° C",
+							"    pm.expect(temperature).to.be.above(-4); // -20° C",
+							"});",
+							"",
+							"//Stopping the Runner",
+							"postman.setNextRequest(null);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "896e4510-179d-47b0-9160-302d495fd25e",
+						"exec": [
+							"console.log(\"Now fetching Bangalore weather\")"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"_postman_id": "db2305a5-3729-4a41-8c79-8f4867d0b0aa",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openweathermap.org/data/2.5/weather?lat={{bangalore_lat}}&lon={{bangalore_lon}}&appid={{weather_api_key}}&units=imperial",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "{{bangalore_lat}}"
+						},
+						{
+							"key": "lon",
+							"value": "{{bangalore_lon}}"
+						},
+						{
+							"key": "appid",
+							"value": "{{weather_api_key}}"
+						},
+						{
+							"key": "units",
+							"value": "imperial"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
