@@ -18,6 +18,10 @@
 							"let main = response.weather[0].main;",
 							"var temperature = pm.response.json().main.temp;",
 							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
 							"//Test API speed",
 							"pm.test(\"Response time is less than 300ms\", function () {",
 							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
@@ -55,7 +59,7 @@
 					}
 				}
 			],
-			"_postman_id": "d933fa31-8ab4-4829-bfed-1026d29d8877",
+			"id": "d933fa31-8ab4-4829-bfed-1026d29d8877",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -140,7 +144,7 @@
 					}
 				}
 			],
-			"_postman_id": "26555a2c-cd6e-4a8d-a8c2-f3c7706b3e10",
+			"id": "26555a2c-cd6e-4a8d-a8c2-f3c7706b3e10",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -225,7 +229,7 @@
 					}
 				}
 			],
-			"_postman_id": "db2305a5-3729-4a41-8c79-8f4867d0b0aa",
+			"id": "db2305a5-3729-4a41-8c79-8f4867d0b0aa",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
