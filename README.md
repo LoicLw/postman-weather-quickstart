@@ -1,4 +1,5 @@
-# postman-se-weather
+# Weather Collection Demo
+- This collection fetch and return current temperature of several cities 
 
 ## Quickstart:
 To get started with this collection:
