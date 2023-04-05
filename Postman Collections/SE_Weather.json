@@ -278,5 +278,17 @@
 			},
 			"response": []
 		}
+	],
+	"variable": [
+		{
+			"id": "f1619fa5-bebd-4a23-bda4-b941c3ea98ac",
+			"key": "sf_lat",
+			"value": ""
+		},
+		{
+			"id": "97d6f1f5-0386-4916-b670-23a5592462a9",
+			"key": "sf_lon",
+			"value": ""
+		}
 	]
 }
