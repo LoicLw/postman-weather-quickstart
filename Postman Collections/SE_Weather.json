@@ -116,7 +116,11 @@
 					"script": {
 						"id": "c8ed6bd0-5a1a-4d10-8d77-37113c7f4b72",
 						"exec": [
-							"console.log(\"Now fetching London weather\")"
+							"console.log(\"Now fetching London weather\")",
+							"",
+							"",
+							"pm.collectionVariables.set(\"london_lat\", 51.509865);",
+							"pm.collectionVariables.set(\"london_lon\", -0.118092);"
 						],
 						"type": "text/javascript"
 					}
@@ -284,12 +288,12 @@
 	],
 	"variable": [
 		{
-			"id": "4d01ed65-77a3-4fd4-afda-c509589fb74f",
+			"id": "b0da1c7f-3e25-43d4-a3e8-b9114d239d96",
 			"key": "sf_lat",
 			"value": ""
 		},
 		{
-			"id": "be9f0298-8cce-488d-8f4a-1a896fd38dc0",
+			"id": "ac5def44-385c-46c9-8af6-c012f137a9b1",
 			"key": "sf_lon",
 			"value": ""
 		}
