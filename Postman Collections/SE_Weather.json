@@ -57,7 +57,10 @@
 					"script": {
 						"id": "3677b0a0-0304-4609-9d08-78d05dbd0993",
 						"exec": [
-							"console.log(\"Now fetching SF weather\")"
+							"console.log(\"Now fetching SF weather\")",
+							"",
+							"pm.collectionVariables.set(\"sf_lat\", 37.773972);",
+							"pm.collectionVariables.set(\"sf_lon\", -122.431297);"
 						],
 						"type": "text/javascript"
 					}
