@@ -288,13 +288,23 @@
 	],
 	"variable": [
 		{
-			"id": "b0da1c7f-3e25-43d4-a3e8-b9114d239d96",
+			"id": "b29dcbf0-d59c-4278-827e-7dc944f83331",
 			"key": "sf_lat",
 			"value": ""
 		},
 		{
-			"id": "ac5def44-385c-46c9-8af6-c012f137a9b1",
+			"id": "97a385da-d3dd-4d76-b609-6bfde2d9d788",
 			"key": "sf_lon",
+			"value": ""
+		},
+		{
+			"id": "7da85de3-5384-45ce-a1c1-637b941acb88",
+			"key": "london_lat",
+			"value": ""
+		},
+		{
+			"id": "2a88fd65-fe22-4a67-b2d0-80cb80a933f8",
+			"key": "london_lon",
 			"value": ""
 		}
 	]
