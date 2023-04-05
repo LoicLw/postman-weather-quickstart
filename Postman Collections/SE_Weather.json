@@ -39,12 +39,12 @@
 							"});",
 							"",
 							"//Next Weather request Logic",
-							"if (temperature>60){",
+							"if (temperature>=60){",
 							"    console.log(\"Temp is hot, fetching Bangalore\")",
 							"    postman.setNextRequest(\"Bangalore Temp\"); ",
 							"}",
 							"else{",
-							"    console.log(\"Temp is fine, fetching London\")",
+							"    console.log(\"Temp is less than 60F, fetching London\")",
 							"    postman.setNextRequest(\"London Temp\");",
 							"}",
 							"",
@@ -289,22 +289,22 @@
 	],
 	"variable": [
 		{
-			"id": "bd9ad166-82cb-4e32-a55a-568e2114c941",
+			"id": "a8cf2361-d86a-4898-a6ce-f18c97e7fb4d",
 			"key": "sf_lat",
 			"value": ""
 		},
 		{
-			"id": "79370d30-461d-402a-b44a-cf566cf3597b",
+			"id": "3a15064e-78dd-4ed0-8e43-4d15e395ff6d",
 			"key": "sf_lon",
 			"value": ""
 		},
 		{
-			"id": "638efcb7-a633-4214-8efc-541aa648c44e",
+			"id": "90daa607-4f7c-4988-9716-35dcd3e1d843",
 			"key": "london_lat",
 			"value": ""
 		},
 		{
-			"id": "e4833025-cee2-49e1-a2af-3b091a12ce70",
+			"id": "f835dc57-7adf-40aa-b9a2-85998432e5b1",
 			"key": "london_lon",
 			"value": ""
 		}
