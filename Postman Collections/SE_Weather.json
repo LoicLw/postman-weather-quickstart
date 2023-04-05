@@ -230,7 +230,10 @@
 					"script": {
 						"id": "896e4510-179d-47b0-9160-302d495fd25e",
 						"exec": [
-							"console.log(\"Now fetching Bangalore weather\")"
+							"console.log(\"Now fetching Bangalore weather\")",
+							"",
+							"pm.collectionVariables.set(\"bangalore_lat\", 12.972442);",
+							"pm.collectionVariables.set(\"bangalore_lon\", 77.580643);"
 						],
 						"type": "text/javascript"
 					}
@@ -281,12 +284,12 @@
 	],
 	"variable": [
 		{
-			"id": "f1619fa5-bebd-4a23-bda4-b941c3ea98ac",
+			"id": "4d01ed65-77a3-4fd4-afda-c509589fb74f",
 			"key": "sf_lat",
 			"value": ""
 		},
 		{
-			"id": "97d6f1f5-0386-4916-b670-23a5592462a9",
+			"id": "be9f0298-8cce-488d-8f4a-1a896fd38dc0",
 			"key": "sf_lon",
 			"value": ""
 		}
