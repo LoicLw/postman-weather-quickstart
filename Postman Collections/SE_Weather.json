@@ -38,6 +38,7 @@
 							"    pm.expect(temperature).to.be.above(-4); // -20° C",
 							"});",
 							"",
+							"//Next Weather request Logic",
 							"if (temperature>60){",
 							"    console.log(\"Temp is hot, fetching Bangalore\")",
 							"    postman.setNextRequest(\"Bangalore Temp\"); ",
@@ -288,22 +289,22 @@
 	],
 	"variable": [
 		{
-			"id": "b29dcbf0-d59c-4278-827e-7dc944f83331",
+			"id": "bd9ad166-82cb-4e32-a55a-568e2114c941",
 			"key": "sf_lat",
 			"value": ""
 		},
 		{
-			"id": "97a385da-d3dd-4d76-b609-6bfde2d9d788",
+			"id": "79370d30-461d-402a-b44a-cf566cf3597b",
 			"key": "sf_lon",
 			"value": ""
 		},
 		{
-			"id": "7da85de3-5384-45ce-a1c1-637b941acb88",
+			"id": "638efcb7-a633-4214-8efc-541aa648c44e",
 			"key": "london_lat",
 			"value": ""
 		},
 		{
-			"id": "2a88fd65-fe22-4a67-b2d0-80cb80a933f8",
+			"id": "e4833025-cee2-49e1-a2af-3b091a12ce70",
 			"key": "london_lon",
 			"value": ""
 		}
